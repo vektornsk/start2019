@@ -1,0 +1,24 @@
+{
+  "name": "start2019",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Plukhin Vasiliy",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-purgecss": "^1.1.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-tinypng-nokey": "^1.1.0",
+    "imagemin-pngquant": "^6.0.0"
+  }
+}
