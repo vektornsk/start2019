@@ -17,9 +17,7 @@ function buildHtml() {
       pretty: true
     }))
     .pipe(gulp.dest("static/html"))
-    .pipe(browserSync.reload({
-      stream: true
-    }));
+    .on('end', browserSync.reload);
 }
 
 function buildStyle() {
@@ -35,7 +33,9 @@ function buildStyle() {
     .pipe(rename("style.css"))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("static/css"))
-    .pipe(browserSync.stream());
+    .pipe(browserSync.reload({
+      stream: true
+    }));
 }
 
 function png() {
@@ -89,7 +89,7 @@ gulp.task('server', function () {
   });
 
   gulp.watch("./src/scss/**/*.scss", buildStyle);
-  gulp.watch("./src/pug/**/*", buildHtml);
+  gulp.watch("./src/pug/**/*.pug", buildHtml);
   gulp.watch("./static/js/**/*").on('change', browserSync.reload);
 });
 
