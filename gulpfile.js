@@ -85,12 +85,15 @@ gulp.task('server', function () {
     server: {
       baseDir: 'static'
     },
+    ghostMode: false, // switch them all off in one go
+    tunnel: true, // Tunnel the Browsersync server through a random Public URL
     notify: false
   });
 
   gulp.watch("./src/scss/**/*.scss", buildStyle);
   gulp.watch("./src/pug/**/*.pug", buildHtml);
   gulp.watch("./static/js/**/*").on('change', browserSync.reload);
+  gulp.watch("./static/html/**/*").on('change', browserSync.reload);
 });
 
 gulp.task('default', gulp.series('html', 'style', 'server'));
