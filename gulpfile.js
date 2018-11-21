@@ -27,9 +27,9 @@ function buildStyle() {
     .pipe(autoprefixer({
       browsers: ['last 5 versions']
     }))
-    .pipe(purgecss({
-      content: ["static/html/*.html"]
-    }))
+//     .pipe(purgecss({
+//       content: ["static/html/*.html"]
+//     }))
     .pipe(rename("style.css"))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("static/css"))
